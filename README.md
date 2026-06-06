@@ -105,3 +105,8 @@ Only authorized users with the subject authentication code (`BCS401`) can access
 For robust deployment, the application supports two algorithmic environments controlled by the `.env` file:
 - `ALGORITHM_MODE=cpp`: (Default) Uses `child_process` to execute the native C++ binary, perfect for local development and academic evaluation.
 - `ALGORITHM_MODE=js`: Bypasses C++ and uses a 1:1 JavaScript replica of the array-based Dijkstra's algorithm. This is designed for production serverless deployments (like Vercel or Render) where native compilation steps might be restricted or unsupported.
+
+##Authors 
+** SAMRIDH  RAJ **
+** SATWIK   RAJ **
+** SURYA GAUTAM **
