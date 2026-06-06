@@ -1,4 +1,4 @@
-# Smart Store Navigator using Dijkstra's Algorithm
+# Store Navigator using Dijkstra's Algorithm
 
 ## Project Overview
 The Smart Store Navigator is an academic project for Analysis and Design of Algorithms (ADA). It is a modern web application that helps customers find products inside a store by calculating and displaying the shortest path from the entrance to the selected product using Dijkstra's Algorithm.
@@ -106,7 +106,7 @@ For robust deployment, the application supports two algorithmic environments con
 - `ALGORITHM_MODE=cpp`: (Default) Uses `child_process` to execute the native C++ binary, perfect for local development and academic evaluation.
 - `ALGORITHM_MODE=js`: Bypasses C++ and uses a 1:1 JavaScript replica of the array-based Dijkstra's algorithm. This is designed for production serverless deployments (like Vercel or Render) where native compilation steps might be restricted or unsupported.
 
-##Authors 
-** SAMRIDH  RAJ **
-** SATWIK   RAJ **
-** SURYA GAUTAM **
+##  Authors 
+**SAMRIDH RAJ** 
+**SATWIK RAJ**
+**SURYA GAUTAM**
