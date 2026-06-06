@@ -46,6 +46,8 @@ exports.findRoute = (req, res) => {
         const execName = isWindows ? 'dijkstra.exe' : 'dijkstra';
         execCommand = path.join(__dirname, '../../algorithm', execName);
         
+        console.log("Using C++ Dijkstra");
+        
         if (!fs.existsSync(execCommand)) {
              // Silently fallback to JS if executable is missing to prevent crash
              execCommand = 'node';
