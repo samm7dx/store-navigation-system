@@ -57,15 +57,31 @@ The frontend will run on `http://localhost:5173`.
 - `POST /api/find-route`: Find the shortest route (expects `{ start: [r, c], end: [r, c] }`)
 - `POST /api/verify-admin`: Verify Subject Code `BCS401`.
 
+## Challenges Faced
+- **Grid Mapping to Graph Structure**: Translating a 2D matrix (where cells represent both nodes and edges) into a format suitable for Dijkstra's algorithm required careful handling of coordinate boundaries and obstacle detection (shelves).
+- **Frontend-Backend Algorithm Syncing**: Ensuring that the route output from the native C++ binary matches the expectations of the JavaScript frontend precisely via stdout parsing.
+- **Sequential Path Animation**: Animating the calculated shortest path smoothly on the React frontend without causing rendering bottlenecks required a state-driven approach tied to frame-by-frame coordinate mapping.
+- **Handling Native Executables**: Dealing with platform-specific execution (`.exe` on Windows vs. Linux binaries) when bridging Node.js and C++. This was resolved by creating a JavaScript fallback mode.
+
 ## Viva Justification
 **Why Dijkstra?**
 - It finds the absolute shortest path for unweighted or positive-weighted graphs.
 - Highly suitable for navigation problems where the distance cost is uniform (1 step).
 
+## Array vs. Priority Queue Dijkstra
+
 **Why Arrays Instead of Priority Queue?**
-- Small graph size (10x10 matrix has only 100 nodes).
-- O(V²) complexity is highly acceptable and runs in less than a millisecond for this grid size.
-- Much easier to implement, trace, and explain during a viva evaluation.
+- **Educational Scope**: A core objective was to demonstrate the fundamental mechanics of node relaxation and extraction from scratch without abstracting logic behind standard libraries like `std::priority_queue`.
+- **Graph Size constraint**: The store grid size is fixed and relatively small (e.g., 10x10 matrix yields only 100 nodes).
+- **Simplicity & Traceability**: Finding the minimum distance vertex in a simple linear loop is much easier to implement, trace, and explain during a viva evaluation.
+
+**Performance Comparison**
+| Feature | Array-Based Dijkstra | Priority Queue Dijkstra (Min-Heap) |
+| :--- | :--- | :--- |
+| **Time Complexity** | `O(V²)` where V is the number of vertices. | `O((V + E) log V)` where E is the number of edges. |
+| **Space Complexity** | `O(V)` auxiliary space for distance arrays. | `O(V)` for the priority queue and distance arrays. |
+| **Best Use Case** | Dense graphs where `E` approaches `V²`, or very small graphs. | Sparse graphs where `E` is much less than `V²`, and large-scale maps. |
+| **Real-World Impact** | For `V = 100` nodes, `V² = 10,000` operations. This runs in `< 1ms` on modern CPUs, making the overhead of maintaining a heap structure unnecessary for this specific scale. |
 
 **Why Matrix Representation?**
 - Closely resembles actual store layouts (grids of aisles and shelves).
