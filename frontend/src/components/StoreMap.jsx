@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Package, User, Star, ShoppingCart } from 'lucide-react';
 
@@ -6,8 +6,24 @@ const StoreMap = ({ layout, path, start, end, products, selectedProduct }) => {
   const rows = layout.length;
   const cols = layout[0].length;
 
-  const isPathCell = (r, c) => path.some(([pr, pc]) => pr === r && pc === c);
-  
+  const [visiblePathIndex, setVisiblePathIndex] = useState(-1);
+
+  useEffect(() => {
+    if (path && path.length > 0) {
+      setVisiblePathIndex(0);
+      const interval = setInterval(() => {
+        setVisiblePathIndex((prev) => {
+          if (prev < path.length) return prev + 1;
+          clearInterval(interval);
+          return prev;
+        });
+      }, 50); // animate cell by cell
+      return () => clearInterval(interval);
+    } else {
+      setVisiblePathIndex(-1);
+    }
+  }, [path]);
+
   const hasProduct = (r, c) => products.some(p => p.row === r && p.col === c);
 
   return (
@@ -31,17 +47,21 @@ const StoreMap = ({ layout, path, start, end, products, selectedProduct }) => {
           row.map((cell, c) => {
             const isStart = start[0] === r && start[1] === c;
             const isEnd = end && end[0] === r && end[1] === c;
-            const isPath = isPathCell(r, c);
+            
+            const pathIndex = path.findIndex(([pr, pc]) => pr === r && pc === c);
+            const isPath = pathIndex !== -1;
+            const isPathVisible = isPath && pathIndex <= visiblePathIndex;
+
             const isShelf = cell === 1;
             const isCheckout = cell === 2;
             const isSpecificTarget = selectedProduct && selectedProduct.row === r && selectedProduct.col === c;
             const isUnselectedProduct = !isSpecificTarget && hasProduct(r, c);
 
-            let bgClass = isShelf ? 'bg-store-shelf shadow-md' : 'bg-store-floor';
+            let bgClass = isShelf ? 'bg-store-shelf bg-gray-800 shadow-md' : 'bg-store-floor bg-white';
             if (isCheckout) bgClass = 'bg-purple-100 border-2 border-purple-300';
-            if (isPath && !isStart && !isEnd) bgClass = 'bg-store-path shadow-sm';
-            if (isStart) bgClass = 'bg-store-entrance shadow-md';
-            if (isSpecificTarget) bgClass = 'bg-store-product shadow-lg ring-4 ring-green-200';
+            if (isPathVisible && !isStart && !isEnd) bgClass = 'bg-store-path bg-yellow-400 shadow-sm';
+            if (isStart) bgClass = 'bg-store-entrance bg-blue-500 shadow-md';
+            if (isSpecificTarget) bgClass = 'bg-store-product bg-green-500 shadow-lg ring-4 ring-green-200';
 
             return (
               <div 
@@ -77,18 +97,17 @@ const StoreMap = ({ layout, path, start, end, products, selectedProduct }) => {
                     </motion.div>
                   )}
                   {/* Show all inventory dots if they are not the active target */}
-                  {isUnselectedProduct && !isStart && !isPath && (
+                  {isUnselectedProduct && !isStart && !isPathVisible && (
                      <motion.div
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       className="w-2 h-2 sm:w-3 sm:h-3 bg-indigo-300 rounded-full"
                      />
                   )}
-                  {isPath && !isStart && !isSpecificTarget && (
+                  {isPathVisible && !isStart && !isSpecificTarget && (
                     <motion.div
                       initial={{ scale: 0 }}
                       animate={{ scale: 1 }}
-                      transition={{ delay: 0.05 * path.findIndex(([pr, pc]) => pr === r && pc === c) }}
                       className="w-2 h-2 sm:w-3 sm:h-3 bg-white rounded-full opacity-50"
                     />
                   )}
