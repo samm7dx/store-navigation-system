@@ -1,0 +1,60 @@
+[
+  {"id": 1, "name": "Milk", "category": "Dairy", "zone": "Dairy Zone", "rackType": "Refrigerated Rack", "row": 0, "col": 1},
+  {"id": 2, "name": "Butter", "category": "Dairy", "zone": "Dairy Zone", "rackType": "Refrigerated Rack", "row": 0, "col": 2},
+  {"id": 3, "name": "Cheese", "category": "Dairy", "zone": "Dairy Zone", "rackType": "Refrigerated Rack", "row": 0, "col": 4},
+  {"id": 4, "name": "Paneer", "category": "Dairy", "zone": "Dairy Zone", "rackType": "Refrigerated Rack", "row": 0, "col": 5},
+  {"id": 5, "name": "Curd", "category": "Dairy", "zone": "Dairy Zone", "rackType": "Refrigerated Rack", "row": 0, "col": 7},
+  
+  {"id": 6, "name": "Ice Cream", "category": "Frozen Foods", "zone": "Frozen Foods Zone", "rackType": "Freezer", "row": 2, "col": 1},
+  {"id": 7, "name": "Frozen Corn", "category": "Frozen Foods", "zone": "Frozen Foods Zone", "rackType": "Freezer", "row": 2, "col": 2},
+  {"id": 8, "name": "Frozen Peas", "category": "Frozen Foods", "zone": "Frozen Foods Zone", "rackType": "Freezer", "row": 2, "col": 4},
+  {"id": 9, "name": "Frozen Pizza", "category": "Frozen Foods", "zone": "Frozen Foods Zone", "rackType": "Freezer", "row": 2, "col": 5},
+  {"id": 10, "name": "Frozen Nuggets", "category": "Frozen Foods", "zone": "Frozen Foods Zone", "rackType": "Freezer", "row": 2, "col": 7},
+
+  {"id": 11, "name": "Rice", "category": "Grains & Pulses", "zone": "Grains & Pulses Zone", "rackType": "Open Rack", "row": 4, "col": 1},
+  {"id": 12, "name": "Wheat", "category": "Grains & Pulses", "zone": "Grains & Pulses Zone", "rackType": "Open Rack", "row": 4, "col": 2},
+  {"id": 13, "name": "Toor Dal", "category": "Grains & Pulses", "zone": "Grains & Pulses Zone", "rackType": "Open Rack", "row": 4, "col": 4},
+  {"id": 14, "name": "Moong Dal", "category": "Grains & Pulses", "zone": "Grains & Pulses Zone", "rackType": "Open Rack", "row": 4, "col": 5},
+  {"id": 15, "name": "Rajma", "category": "Grains & Pulses", "zone": "Grains & Pulses Zone", "rackType": "Open Rack", "row": 4, "col": 7},
+
+  {"id": 16, "name": "Potato Chips", "category": "Snacks", "zone": "Snacks Zone", "rackType": "Display Rack", "row": 6, "col": 1},
+  {"id": 17, "name": "Chocolate Cookies", "category": "Snacks", "zone": "Snacks Zone", "rackType": "Display Rack", "row": 6, "col": 2},
+  {"id": 18, "name": "Biscuits", "category": "Snacks", "zone": "Snacks Zone", "rackType": "Display Rack", "row": 6, "col": 4},
+  {"id": 19, "name": "Popcorn", "category": "Snacks", "zone": "Snacks Zone", "rackType": "Display Rack", "row": 6, "col": 5},
+  {"id": 20, "name": "Nachos", "category": "Snacks", "zone": "Snacks Zone", "rackType": "Display Rack", "row": 6, "col": 7},
+
+  {"id": 21, "name": "Mineral Water", "category": "Beverages", "zone": "Beverages Zone", "rackType": "Shelf Rack", "row": 0, "col": 8},
+  {"id": 22, "name": "Orange Juice", "category": "Beverages", "zone": "Beverages Zone", "rackType": "Shelf Rack", "row": 2, "col": 8},
+  {"id": 23, "name": "Green Tea", "category": "Beverages", "zone": "Beverages Zone", "rackType": "Shelf Rack", "row": 4, "col": 8},
+  {"id": 24, "name": "Coffee Powder", "category": "Beverages", "zone": "Beverages Zone", "rackType": "Shelf Rack", "row": 6, "col": 8},
+  {"id": 25, "name": "Cola", "category": "Beverages", "zone": "Beverages Zone", "rackType": "Shelf Rack", "row": 8, "col": 8},
+
+  {"id": 26, "name": "Bathing Soap", "category": "Personal Care", "zone": "Personal Care Zone", "rackType": "Personal Care Rack", "row": 8, "col": 1},
+  {"id": 27, "name": "Anti-Dandruff Shampoo", "category": "Personal Care", "zone": "Personal Care Zone", "rackType": "Personal Care Rack", "row": 8, "col": 2},
+  {"id": 28, "name": "Toothpaste", "category": "Personal Care", "zone": "Personal Care Zone", "rackType": "Personal Care Rack", "row": 8, "col": 4},
+  {"id": 29, "name": "Body Lotion", "category": "Personal Care", "zone": "Personal Care Zone", "rackType": "Personal Care Rack", "row": 8, "col": 5},
+  {"id": 30, "name": "Face Wash", "category": "Personal Care", "zone": "Personal Care Zone", "rackType": "Personal Care Rack", "row": 8, "col": 7},
+
+  {"id": 31, "name": "Washing Detergent", "category": "Household", "zone": "Household Zone", "rackType": "Utility Rack", "row": 2, "col": 0},
+  {"id": 32, "name": "Floor Cleaner", "category": "Household", "zone": "Household Zone", "rackType": "Utility Rack", "row": 4, "col": 0},
+  {"id": 33, "name": "Dish Wash Liquid", "category": "Household", "zone": "Household Zone", "rackType": "Utility Rack", "row": 6, "col": 0},
+  {"id": 34, "name": "Trash Bags", "category": "Household", "zone": "Household Zone", "rackType": "Utility Rack", "row": 8, "col": 0},
+  {"id": 35, "name": "Sponge", "category": "Household", "zone": "Household Zone", "rackType": "Utility Rack", "row": 0, "col": 0},
+
+  {"id": 36, "name": "White Bread", "category": "Bakery", "zone": "Bakery Zone", "rackType": "Bakery Shelf", "row": 2, "col": 3},
+  {"id": 37, "name": "Chocolate Cake", "category": "Bakery", "zone": "Bakery Zone", "rackType": "Bakery Shelf", "row": 4, "col": 3},
+  {"id": 38, "name": "Sweet Bun", "category": "Bakery", "zone": "Bakery Zone", "rackType": "Bakery Shelf", "row": 6, "col": 3},
+  {"id": 39, "name": "Croissant", "category": "Bakery", "zone": "Bakery Zone", "rackType": "Bakery Shelf", "row": 8, "col": 3},
+  {"id": 40, "name": "Muffin", "category": "Bakery", "zone": "Bakery Zone", "rackType": "Bakery Shelf", "row": 0, "col": 3},
+
+  {"id": 41, "name": "Yogurt", "category": "Dairy", "zone": "Dairy Zone", "rackType": "Refrigerated Rack", "row": 0, "col": 6},
+  {"id": 42, "name": "Ice Pops", "category": "Frozen Foods", "zone": "Frozen Foods Zone", "rackType": "Freezer", "row": 2, "col": 6},
+  {"id": 43, "name": "Oats", "category": "Grains & Pulses", "zone": "Grains & Pulses Zone", "rackType": "Open Rack", "row": 4, "col": 6},
+  {"id": 44, "name": "Pretzels", "category": "Snacks", "zone": "Snacks Zone", "rackType": "Display Rack", "row": 6, "col": 6},
+  {"id": 45, "name": "Apple Juice", "category": "Beverages", "zone": "Beverages Zone", "rackType": "Shelf Rack", "row": 8, "col": 6},
+  {"id": 46, "name": "Deodorant", "category": "Personal Care", "zone": "Personal Care Zone", "rackType": "Personal Care Rack", "row": 8, "col": 4},
+  {"id": 47, "name": "Bleach", "category": "Household", "zone": "Household Zone", "rackType": "Utility Rack", "row": 4, "col": 9},
+  {"id": 48, "name": "Bagels", "category": "Bakery", "zone": "Bakery Zone", "rackType": "Bakery Shelf", "row": 2, "col": 9},
+  {"id": 49, "name": "Lemonade", "category": "Beverages", "zone": "Beverages Zone", "rackType": "Shelf Rack", "row": 6, "col": 9},
+  {"id": 50, "name": "Hand Sanitizer", "category": "Personal Care", "zone": "Personal Care Zone", "rackType": "Personal Care Rack", "row": 0, "col": 9}
+]
