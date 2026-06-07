@@ -108,5 +108,5 @@ For robust deployment, the application supports two algorithmic environments con
 
 ##  Authors 
 **SAMRIDH RAJ** 
-**SATWIK RAJ**
-**SURYA GAUTAM**
+**/SATWIK RAJ**
+**/SURYA GAUTAM**
